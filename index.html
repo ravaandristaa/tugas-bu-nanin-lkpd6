@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstrakurikuler Sekolah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- FORM PENDAFTARAN -->
+        <div class="form-card">
+
+            <div class="form-header">
+                <div class="logo">EK</div>
+                <div>
+                    <h1>Pendaftaran Ekstrakurikuler</h1>
+                    <p>Daftarkan dirimu dan pilih kegiatan yang kamu minati.</p>
+                </div>
+            </div>
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+                    <small id="namaError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="contoh@email.com">
+                    <small id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Minimal 8 karakter">
+                    <small id="passwordError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Konfirmasi Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Ulangi password">
+                    <small id="confirmPasswordError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="ekstrakurikuler">Pilihan Ekstrakurikuler</label>
+
+                    <select id="ekstrakurikuler">
+                        <option value="">-- Pilih Ekstrakurikuler --</option>
+                        <option value="Paskib">Paskib</option>
+                        <option value="Dramben">Dramben</option>
+                        <option value="Pramuka">Pramuka</option>
+                        <option value="Rohani Islam">Rohani Islam</option>
+                        <option value="Voli">Voli</option>
+                        <option value="OSIS">OSIS</option>
+                        <option value="Paduan Suara">Paduan Suara</option>
+                        <option value="Tari">Tari</option>
+                        <option value="Futsal">Futsal</option>
+                        <option value="Jurnalistik">Jurnalistik</option>
+                        <option value="Club Bahasa Jepang">Club Bahasa Jepang</option>
+                        <option value="PMR">PMR</option>
+                        <option value="Silat">Silat</option>
+                        <option value="Foster">Foster</option>
+                    </select>
+
+                    <small id="ekstrakurikulerError"></small>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Daftar Sekarang
+                </button>
+
+                <div id="successMessage"></div>
+
+            </form>
+        </div>
+
+
+        <!-- CHATBOT -->
+        <div class="chat-card">
+
+            <div class="chat-header">
+
+                <div class="chat-title">
+                    <div class="bot-logo">AI</div>
+
+                    <div>
+                        <h2>Asisten Ekstrakurikuler</h2>
+                        <span>Online</span>
+                    </div>
+                </div>
+
+                <button id="clearChat" class="clear-chat">
+                    Hapus Semua
+                </button>
+
+            </div>
+
+
+            <div class="chat-messages" id="chatMessages">
+
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Halo! Saya siap membantu kamu tentang ekstrakurikuler.
+                        Kamu bisa bertanya tentang Paskib, Pramuka, Futsal,
+                        OSIS, dan ekstrakurikuler lainnya.
+                    </div>
+
+                    <button class="delete-message" onclick="deleteMessage(this)">
+                        Hapus
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="quick-buttons">
+
+                <button onclick="quickQuestion('Apa saja ekstrakurikulernya?')">
+                    Daftar Ekskul
+                </button>
+
+                <button onclick="quickQuestion('Jelaskan tentang Paskib')">
+                    Paskib
+                </button>
+
+                <button onclick="quickQuestion('Jelaskan tentang Pramuka')">
+                    Pramuka
+                </button>
+
+                <button onclick="quickQuestion('Jelaskan tentang Futsal')">
+                    Futsal
+                </button>
+
+            </div>
+
+
+            <div class="chat-input-area">
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Tulis pertanyaan..."
+                >
+
+                <button id="sendChat">
+                    Kirim
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
